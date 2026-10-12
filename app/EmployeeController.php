@@ -72,7 +72,8 @@ class EmployeeController
     {
         $config = $request->otherData('crudConfig');
         $payload = $request->body();
-        $payload['password'] = password_hash($payload['password'], PASSWORD_DEFAULT);
+        $payload['password_hash'] = password_hash($payload['password'], PASSWORD_DEFAULT);
+        unset($payload['password']);
 
         $id = DB::table($config['table'])->insert($payload);
         $data = DB::table($config['table'])->where('id', $id)->first();
@@ -93,7 +94,8 @@ class EmployeeController
         }
         else
         {
-            $payload['password'] = password_hash($payload['password'], PASSWORD_DEFAULT);
+            $payload['password_hash'] = password_hash($payload['password'], PASSWORD_DEFAULT);
+            unset($payload['password']);
         }
         
         DB::table($config['table'])->where('id', $id)->update($payload);
