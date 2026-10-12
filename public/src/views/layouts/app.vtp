@@ -1,0 +1,33 @@
+<header class="navbar sticky-top bg-white flex-md-nowrap p-0" data-bs-theme="light">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-dark d-flex align-items-center" href="/">
+        <img src="/assets/images/adhikara-nusa-perkasa.png" alt="company-logo" style="height:100%;object-fit: contain;object-position: left;">
+        <h5 class="ms-3 mb-0 p-0">
+            AdhikaraNP
+        </h5>
+    </a> 
+    <!-- Right Menu -->
+    <div class="ms-auto d-flex align-items-center gap-3 px-md-4 px-2">
+        <!-- Notification -->
+        @component('vtp-notification')
+
+        <!-- User -->
+        @component('vtp-account')
+
+        <!-- Mobile Toggle -->
+        <button class="btn btn-transparent btn-burger p-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+    </div>
+    
+</header>
+<div class="container-fluid">
+    <div class="row">
+         @component('vtp-sidebar')
+
+        <main class="main-content p-4">
+            <section data-vtprouter></section>
+        </main>
+    </div>
+</div>

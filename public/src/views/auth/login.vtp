@@ -1,0 +1,44 @@
+<!-- Logo Header -->
+<div class="d-flex align-items-center mb-4">
+    <img src="/assets/images/adhikara-nusa-perkasa.png" alt="company-logo" style="width:150px;object-fit: contain;object-position: left;">
+</div>
+
+<!-- Login Card -->
+<div class="card card-custom-shadow border-0 rounded-4 w-100" style="max-width: 440px;">
+    <div class="card-body p-4 p-sm-5">
+        
+        <!-- Title -->
+        <h4 class="text-center fw-bold mb-1" style="color: var(--text-dark);">Adhikara Nusa Perkasa</h4>
+        <p class="text-center mb-4" style="color: var(--text-muted); font-size: 0.9rem;">Sign in to your account</p>
+
+        <!-- Form -->
+        <form action="" id="loginForm">
+            <!-- Email Input -->
+            <div class="mb-3">
+                <label for="email" class="form-label fw-semibold small mb-1">Email</label>
+                <input type="email" name="email" class="form-control rounded-3" id="email" placeholder="name@example.com" required value="{{email}}">
+            </div>
+
+            <!-- Password Input -->
+            <div class="mb-3">
+                <label for="password" class="form-label fw-semibold small mb-1">Password</label>
+                <input type="password" name="password" class="form-control rounded-3" id="password" placeholder="Enter your password" value="{{password}}" required>
+            </div>
+
+            <!-- Remember Me & Forgot Password -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="form-check mb-0">
+                    <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                    <label class="form-check-label text-muted small" for="rememberMe">
+                        Remember me
+                    </label>
+                </div>
+                <a href="/forget-password" class="text-decoration-none fw-semibold small text-brand" router-link>Forgot password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-normal btn-success w-100 rounded-3 py-2 fw-semibold mb-2 btn-login">{{btnLoginLabel}}</button>
+        </form>
+
+    </div>
+</div>
