@@ -36,7 +36,7 @@ export default class AttendanceController extends CrudController {
                 { label: 'Placement', key: 'placement_name' },
                 { label: 'Date', key: 'attendance_date' },
                 { label: 'Check In', key: 'start_at' },
-                { label: 'Check Out', key: 'end_at' },
+                { label: 'Check Out', key: 'end_at', value: data => data ?? '-' },
                 { label: 'Type', key: 'record_type', value: function(data, record){
                     const val = attendanceTypeOptions.find(att => att.value == data)
                     return val.label
@@ -75,7 +75,7 @@ export default class AttendanceController extends CrudController {
                 // { label: 'Schedule ID', key: 'schedule_id' },
                 { label: 'Attendance Date', key: 'attendance_date' },
                 { label: 'Check In', key: 'start_at' },
-                { label: 'Check Out', key: 'end_at' },
+                { label: 'Check Out', key: 'end_at', value: data => data ?? '-' },
                 { label: 'Check-in Location', key: 'start_lat', value: (data, record) => {
                     return !data ? '-' : '<a href="https://www.google.com/maps?q='+record.start_lat+','+record.start_lng+'" target="_blank">Lihat</a>'
                 } },
